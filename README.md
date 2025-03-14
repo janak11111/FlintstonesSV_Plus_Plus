@@ -9,13 +9,15 @@
 
 ## 🌟 Overview
 
-The **FlintstonesSV++** dataset enhances the original **FlintstonesSV** dataset by integrating **Visual Scene Graphs** and **Large Language Models (LLMs)** to improve story narration. This enriched dataset introduces a more accurate and contextually improved method of generating scene narratives, aimed at advancing narrative-based AI applications.
-
-![FlintstonesSV++ Diagram](data/Text_2_Story_main_diagram.jpg)
+- The **FlintstonesSV++** dataset enhances the original **FlintstonesSV** dataset by integrating **Visual Scene Graphs** and **Large Language Models (LLMs)** to improve story narration. 
+- This enriched dataset introduces a more accurate and contextually improved method of generating scene narratives, aimed at advancing narrative-based AI applications.
 
 ---
 
 ## 🔄 Three-Step Methodology of FlintstonesSV++
+
+![FlintstonesSV++ Diagram](images/Text_2_Story_maini_diagram.jpg)
+
 
 ### 1) **Visual Scene Graph Generation**  
 The first step involves feeding the scene image and caption into the **Gemini-Flash** model, which generates a **Visual Scene Graph**. The graph visually represents the story, where:
