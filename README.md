@@ -2,8 +2,13 @@
 
 **Paper Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://drive.google.com/file/d/1FszLRLLoqRqp06pqtD5wzsiPMHHN95pi/view?usp=drive_link)  
 **Accepted at:** Text2Story Workshop, ECIR Conference 2025, Lucca, Italy.  
-**Authors:** Janak Kapuriya, Paul Buiteelar  
+**Authors:** **Janak Kapuriya**, **Paul Buiteelar**
 **Organization:** Insight SFI Research Center for Data Analytics, University of Galway, Ireland.
+
+---
+
+## FlinststonesSV++ Dataset
+- 🤗🤗🤗 [Huggingface Link](https://huggingface.co/datasets/Janak12/FlintstonesSV_Plus_Plus)
 
 ---
 
@@ -54,9 +59,10 @@ Each sample in **FlintstonesSV++** includes the following:
 
 ## 🖼️Qualitative Comparison between FlintstonesSV++ and FlintstonesSV
 
-![Comparison](data/flintstonesSV++_effectiveness.png)
+![Comparison](images/flintstonesSV++_effectiveness.png)
 
-The image above shows the comparison between the **FlintstonesSV++** and **FlintstonesSV** datasets. The blue-highlighted text in **FlintstonesSV++** represents additional factual information extracted through our visual scene graph-based approach, which is missing in the original **FlintstonesSV** dataset.
+- The image above shows the comparison between the **FlintstonesSV++** and **FlintstonesSV** datasets.
+- The blue-highlighted text in **FlintstonesSV++** represents additional **factual information extracted through our visual scene graph-based approach**, which is missing in the original **FlintstonesSV** dataset.
 
 ---
 
@@ -76,9 +82,10 @@ By fine-tuning text-to-story generation models on **FlintstonesSV++**, we demons
 
 ## 🔮🔮Predicted Results Comparison between FlintstonesSV++ and FlintstonesSV
 
-![Predicted Results](data/flintstonesSV++_predicted_results.png)
+![Predicted Results](images/flintstonesSV++_predicted_results.png)
 
-This image shows the comparison of ground truth scene images and generated scene images produced by fine-tuned diffusion models for scene narrative-to-image generation. The **blue** color in the text highlights factual information added by our visual scene graph approach.
+- This image shows the comparison of ground truth scene images and generated scene images produced by fine-tuned diffusion models for scene **narrative-to-image** generation.
+- The **blue** color in the text **highlights factual information added by our visual scene graph approach**.
 
 ---
 
