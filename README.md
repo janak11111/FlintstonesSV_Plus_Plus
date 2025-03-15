@@ -2,7 +2,7 @@
 
 **Paper Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://drive.google.com/file/d/1FszLRLLoqRqp06pqtD5wzsiPMHHN95pi/view?usp=drive_link)  
 **Accepted at:** Text2Story Workshop, ECIR Conference 2025, Lucca, Italy.  
-**Authors:** **Janak Kapuriya**, **Paul Buiteelar**
+**Authors**: *Janak Kapuriya*, *Paul Buiteelar* \
 **Organization:** Insight SFI Research Center for Data Analytics, University of Galway, Ireland.
 
 ---
