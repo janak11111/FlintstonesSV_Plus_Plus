@@ -100,4 +100,4 @@ By fine-tuning text-to-story generation models on **FlintstonesSV++**, we demons
 Feel free to reach out if you have any questions or suggestions!
 
 **Janak Kapuriya**  
-📧 Email: [janakkumnar.kapuriya@insight-centre.org](mailto:janakkumnar.kapuriya@insight-centre.org)
+📧 Email: [janakkumar.kapuriya@insight-centre.org](mailto:janakkumnar.kapuriya@insight-centre.org)
