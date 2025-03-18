@@ -14,7 +14,7 @@ import time
 google_api_key = "ENTER_YOUR_API_KEY_HERE"
 os.environ["GOOGLE_API_KEY"] = google_api_key
 
-GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -44,10 +44,8 @@ safety_settings = [
 ]
 
 
-
 ### function to create prompt for model
 def make_prompt(sample):
-
     prompt = f"""Analyze the input image and its caption to identify all the objects, their attributes, and relationships between them.
 
     1. Identify Objects: Label each object with a specific name (e.g., 'red apple' instead of 'fruit', 'fred' or 'wilma' or 'dino' instead of man, woman, animal).
@@ -75,7 +73,6 @@ def make_prompt(sample):
         ]
     }}"""
 
-
     ### set image data for Gemini
     diagram_image = {
     'mime_type': 'image/png',
@@ -101,7 +98,6 @@ def generate_solution(sample):
         return generated_vsg
 
 
-
 ### loadf the input flintstonesSV data file
 with open('path/to/flintstones/data/file.json') as f:
     data = json.load(f)
@@ -109,16 +105,11 @@ with open('path/to/flintstones/data/file.json') as f:
 
 ### loop to generate VSG and store it in jsonl file
 with open(f"path/to/data/output/file.jsonl", "a", encoding='utf-8') as ans_file:
-        
     for sample in tqdm(data):
-
         img = sample['image_id'][:-4] + '.png'
         time.sleep(5)
 
-        ### generate VSG
         response = generate_solution(sample)
-
-        ### extract response (change according to your results)
         response = response[8:].strip()[:-4]
         
         try:
@@ -127,10 +118,8 @@ with open(f"path/to/data/output/file.jsonl", "a", encoding='utf-8') as ans_file:
             response_dict['id'] = img
             ans_file.write(json.dumps(response_dict) + '\n')
             ans_file.flush()
-
             
         except json.JSONDecodeError as e:
             # Catch the error and print details to help debug
             print(f"JSONDecodeError: {e}")
             print(f"Invalid response content: {response}")
-
