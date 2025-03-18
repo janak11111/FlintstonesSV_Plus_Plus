@@ -21,7 +21,7 @@
 
 ## 🔄 Three-Step Methodology of FlintstonesSV++
 
-![FlintstonesSV++ Diagram](images/Text_2_Story_maini_diagram.jpg)
+![FlintstonesSV++ Diagram](images/Text_2_Story_main_diagram.jpg)
 
 
 ### 1) **Visual Scene Graph Generation**  
