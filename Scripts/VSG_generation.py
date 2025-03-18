@@ -1,4 +1,4 @@
-### importing libraries
+# importing libraries
 import pathlib
 import textwrap
 from pprint import pprint
@@ -10,7 +10,7 @@ import numpy as np
 import time
 
 
-### set API keys and model
+# set API keys and model
 google_api_key = "ENTER_YOUR_API_KEY_HERE"
 os.environ["GOOGLE_API_KEY"] = google_api_key
 
@@ -44,7 +44,7 @@ safety_settings = [
 ]
 
 
-### function to create prompt for model
+# function to create prompt for model
 def make_prompt(sample):
     prompt = f"""Analyze the input image and its caption to identify all the objects, their attributes, and relationships between them.
 
@@ -73,7 +73,7 @@ def make_prompt(sample):
         ]
     }}"""
 
-    ### set image data for Gemini
+    # set image data for Gemini
     diagram_image = {
     'mime_type': 'image/png',
     'data': pathlib.Path(os.path.join('ENTER_IMAGE_FOLDER_PATH', sample['image_id'] + '.png')).read_bytes()
@@ -81,7 +81,7 @@ def make_prompt(sample):
     return [diagram_image, prompt]
 
 
-### function to generate VSG from Gemini
+# function to generate VSG from Gemini
 def generate_solution(sample):
     response = model.generate_content(
     contents = make_prompt(sample),
@@ -98,12 +98,12 @@ def generate_solution(sample):
         return generated_vsg
 
 
-### loadf the input flintstonesSV data file
+# loadf the input flintstonesSV data file
 with open('path/to/flintstones/data/file.json') as f:
     data = json.load(f)
 
 
-### loop to generate VSG and store it in jsonl file
+# loop to generate VSG and store it in jsonl file
 with open(f"path/to/data/output/file.jsonl", "a", encoding='utf-8') as ans_file:
     for sample in tqdm(data):
         img = sample['image_id'][:-4] + '.png'
