@@ -1,103 +1,110 @@
-# 🚀🚀🚀 FlintstonesSV++: Improving Story Narration using Visual Scene Graph
 
-**Paper Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://drive.google.com/file/d/1CuhZ1Ci3cFYrXy8Ni1mfhJ8ibWTLV0BL/view?usp=sharing)  
+# 🚀 FlintstonesSV++: Improving Story Narration using Visual Scene Graph  
+
+## Overview  
+
+FlintstonesSV++ is a dataset and framework designed to improve story narration by leveraging **Visual Scene Graphs** to enhance the quality of scene descriptions. It also provides tools to finetune story visualization models for better narrative coherence and visual storytelling.  
+
+---
+
+### FlintstonesSV++ Dataset  
+
+🤗🤗🤗 [Huggingface Link](https://huggingface.co/datasets/Janak12/FlintstonesSV_Plus_Plus)
+
+```bash
+# Code to download the dataset 
+from datasets import load_dataset
+
+dataset = load_dataset("Janak12/FlintstonesSV_Plus_Plus")
+```  
+
+---
+
+## Content  
+
+- [Installation](#installation)  
+- [FlintstonesSV++ Dataset](#flintstonessv-dataset)  
+- [Generate Visual Scene Graph](#generate-visual-scene-graph)  
+- [Improve Story Narration](#improve-story-narration)  
+- [Finetune Story Visualization Models](#finetune-story-visualization-models)  
+
+---
+
+## Installation  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/janak11111/FlintstonesSV_Plus_Plus
+   cd FlintstonesSV_Plus_Plus
+   ```
+
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```  
+
+---
+
+## FlintstonesSV++ Dataset  
+
+Download and load the dataset:  
+
+```bash
+# Run in Python environment
+from datasets import load_dataset
+
+dataset = load_dataset("Janak12/FlintstonesSV_Plus_Plus")
+```  
+
+---
+
+## Generate Visual Scene Graph  
+
+```bash
+# Run the scene graph generation script
+cd Scripts
+python VSG_Generation.py
+```  
+
+---
+
+## Improve Story Narration  
+
+```bash
+# Run the story narration improvement script
+cd Scripts
+python Scene_Narrative_Generation.py 
+```  
+
+---
+
+## Finetune Story Visualization Models  
+
+```bash
+# Run the fine-tuning script
+python finetune_visualization_model.py --config config/finetune_config.yaml
+```  
+
+---
+
+## 📝 Paper  
+
+**Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://drive.google.com/file/d/1CuhZ1Ci3cFYrXy8Ni1mfhJ8ibWTLV0BL/view?usp=sharing)  
 **Accepted at:** Text2Story Workshop, ECIR Conference 2025, Lucca, Italy.  
-**Authors**: *Janak Kapuriya*, *Paul Buitelaar* \
-**Organization:** Insight SFI Research Center for Data Analytics, University of Galway, Ireland.
+**Authors**: *Janak Kapuriya*, *Paul Buitelaar*  
+**Organization:** Insight Research Ireland Center for Data Analytics, Data Science Institute, University of Galway, Ireland.  
 
 ---
 
-## FlinststonesSV++ Dataset
-- 🤗🤗🤗 [Huggingface Link](https://huggingface.co/datasets/Janak12/FlintstonesSV_Plus_Plus)
+## 🤗 Contribution  
+
+We welcome contributions! Feel free to submit issues or pull requests.  
 
 ---
 
-## 🌟 Overview
+## 📬 Get in Touch  
 
-- The **FlintstonesSV++** dataset enhances the original **FlintstonesSV** dataset by integrating **Visual Scene Graphs** and **Large Language Models (LLMs)** to improve story narration. 
-- This enriched dataset introduces a more accurate and contextually improved method of generating scene narratives, aimed at advancing narrative-based AI applications.
-
----
-
-## 🔄 Three-Step Methodology of FlintstonesSV++
-
-![FlintstonesSV++ Diagram](images/Text_2_Story_main_diagram.jpg)
-
-
-### 1) **Visual Scene Graph Generation**  
-The first step involves feeding the scene image and caption into the **Gemini-Flash** model, which generates a **Visual Scene Graph**. The graph visually represents the story, where:
-- **Green boxes** represent **Objects**  
-- **Yellow boxes** represent **Attributes**  
-- **Red circles** represent **Relationships** between the objects
-
-### 2) **Scene Narrative Generation**  
-Using the **Visual Scene Graph**, the **Mistral-7B LLM** generates an improved scene caption. This process leverages zero-shot prompting to enhance the narrative with more detailed and accurate descriptions based on the visual context.
-
-### 3) **Story Scene Generation**  
-Finally, we use fine-tuned **Stable Diffusion models** and the **LoRA** technique to generate a new **Scene Image** based on the enhanced scene caption.
-
----
-
-## 📊 Dataset Details
-
-| Split       | Size   |
-|-------------|--------|
-| **Train**   | 20,132 |
-| **Validation** | 2,071  |
-| **Test**    | 2,309  |
-
----
-
-## 🔍 Dataset Composition
-Each sample in **FlintstonesSV++** includes the following:
-- **id:** A unique identifier for the sample.  
-- **flintstonesSV_image_id:** Matches the original **FlintstonesSV** dataset.  
-- **image:** The scene image.  
-- **text:** The improved scene narrative generated using our Visual Scene Graph and LLM-based approach.
-
----
-
-## 🖼️Qualitative Comparison between FlintstonesSV++ and FlintstonesSV
-
-![Comparison](images/flintstonesSV++_effectiveness.png)
-
-- The image above shows the comparison between the **FlintstonesSV++** and **FlintstonesSV** datasets.
-- The blue-highlighted text in **FlintstonesSV++** represents additional **factual information extracted through our visual scene graph-based approach**, which is missing in the original **FlintstonesSV** dataset.
-
----
-
-## 🎨🎨Text-to-Image Generation Results
-
-| **Dataset**            | **SDXL Base 1.0**        |                       | **Stable Diffusion V4**      |                       | **Stable Diffusion 2**       |                       |
-|-------------------------|--------------------------|-----------------------|------------------------------|-----------------------|------------------------------|-----------------------|
-|                         | **CLIP (↑)**            | **FID (↓)**           | **CLIP (↑)**                | **FID (↓)**           | **CLIP (↑)**                | **FID (↓)**           |
-| **FlintstonesSV**       | 0.2727                  | 77.72                 | 0.2841                      | 52.02                 | 0.2958                      | 42.18                 |
-| **FlintstonesSV++**     | **0.3350**                  | **63.36**                 | **0.3326**                      | **49.87**                 | **0.3436**                      | **41.52**                 |
-
-By fine-tuning text-to-story generation models on **FlintstonesSV++**, we demonstrate substantial improvements:
-- A **5.2%** average increase in alignment scores.
-- A **5.72%** boost in image generation quality compared to models trained on the original **FlintstonesSV** dataset.
-
----
-
-## 🔮🔮Predicted Results Comparison between FlintstonesSV++ and FlintstonesSV
-
-![Predicted Results](images/flintstonesSV++_predicted_results.png)
-
-- This image shows the comparison of ground truth scene images and generated scene images produced by fine-tuned diffusion models for scene **narrative-to-image** generation.
-- The **blue** color in the text **highlights factual information added by our visual scene graph approach**.
-
----
-
-## 🚀🚀 Why FlintstonesSV++?
-
-**FlintstonesSV++** significantly enhances the quality of scene narratives, making it an invaluable resource for narrative-based AI applications.
-
----
-
-## 📬 Get in Touch
-
-Feel free to reach out if you have any questions or suggestions!
+Feel free to reach out if you have any questions or suggestions!  
 
 **Janak Kapuriya**  
-📧 Email: [janakkumar.kapuriya@insight-centre.org](mailto:janakkumnar.kapuriya@insight-centre.org)
+📧 Email: [janakkumar.kapuriya@insight-centre.org](mailto:janakkumar.kapuriya@insight-centre.org)  
