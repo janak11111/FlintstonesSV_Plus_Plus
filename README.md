@@ -41,7 +41,14 @@ dataset = load_dataset("Janak12/FlintstonesSV_Plus_Plus")
 2. Install dependencies:  
    ```bash
    pip install -r requirements.txt
-   ```  
+   ```
+
+3. Create and activate the conda environment:
+   ```
+   conda create -n story python=3.10 -y
+   conda activate story
+   ```
+   
 
 ---
 
