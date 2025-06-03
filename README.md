@@ -96,7 +96,7 @@ python finetune_visualization_model.py --config config/finetune_config.yaml
 
 ## 📝 Paper  
 
-**Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://drive.google.com/file/d/1CuhZ1Ci3cFYrXy8Ni1mfhJ8ibWTLV0BL/view?usp=sharing)  
+**Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://ceur-ws.org/Vol-3964/paper3.pdf))  
 **Accepted at:** Text2Story Workshop, ECIR Conference 2025, Lucca, Italy.  
 **Authors**: *Janak Kapuriya*, *Paul Buitelaar*  
 **Organization:** Insight Research Ireland Center for Data Analytics, Data Science Institute, University of Galway, Ireland.  
@@ -115,3 +115,16 @@ Feel free to reach out if you have any questions or suggestions!
 
 **Janak Kapuriya**  
 📧 Email: [janakkumar.kapuriya@insight-centre.org](mailto:janakkumar.kapuriya@insight-centre.org)  
+
+
+## Citation
+
+If you find this project useful, please cite our work:
+
+```
+@article{kapuriya2025flintstonessv++,
+  title={FlintstonesSV++: Improving Story Narration using Visual Scene Graph},
+  author={Kapuriya, Janak and Buitelaar, Paul},
+  year={2025}
+}
+```
