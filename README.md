@@ -87,7 +87,7 @@ python Scene_Narrative_Generation.py
 
 ## Finetune Story Visualization Models  
 
-### Run the fine-tuning script for SDXL Model
+#### Run the fine-tuning script for SDXL Model
 ```bash
 CUDA_VISIBLE_DEVICES=0  accelerate launch Text_to_Image_mage_finetuning_SDXL_lora.py \
     --pretrained_model_name_or_path='stabilityai/stable-diffusion-xl-base-1.0'  \
@@ -118,7 +118,7 @@ CUDA_VISIBLE_DEVICES=0  accelerate launch Text_to_Image_mage_finetuning_SDXL_lor
 
 ---
 
-### Run the fine-tuning script for other Models
+#### Run the fine-tuning script for other Models
 ```bash
 CUDA_VISIBLE_DEVICES=1  accelerate launch /home/jankap/story_visulization/Finetuning/Scripts/text_2_image_finetuning_lora.py \
     --pretrained_model_name_or_path='CompVis/stable-diffusion-v1-4'  \
@@ -147,7 +147,7 @@ CUDA_VISIBLE_DEVICES=1  accelerate launch /home/jankap/story_visulization/Finetu
 
 ---
 
-### Inference script for Text to Image Generation
+#### Inference script for Text to Image Generation
 ```bash
 CUDA_VISIBLE_DEVICES=0 python Text_to_Image_Inference_sdxl_lora.py \
     --lora_path /path/to/lora/checkpoint-24000 \
