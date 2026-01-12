@@ -860,7 +860,7 @@ def main(args):
     else:
         data_files = {}
         if args.train_data_dir is not None:
-            dataset = load_dataset('json', args.train_json_file)
+            dataset = load_dataset('json', args.data_json_file)
 
     # Preprocessing the datasets.
     # We need to tokenize inputs and targets.
