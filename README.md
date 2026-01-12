@@ -87,13 +87,76 @@ python Scene_Narrative_Generation.py
 
 ## Finetune Story Visualization Models  
 
+### Run the fine-tuning script for SDXL Model
 ```bash
-# Run the fine-tuning script
-python finetune_visualization_model.py --config config/finetune_config.yaml
+CUDA_VISIBLE_DEVICES=0  accelerate launch Text_to_Image_mage_finetuning_SDXL_lora.py \
+    --pretrained_model_name_or_path='stabilityai/stable-diffusion-xl-base-1.0'  \
+    --pretrained_vae_model_name_or_path='madebyollin/sdxl-vae-fp16-fix'\
+    --data_json_file=ADD JSON TRAINING DATA PATH
+    --train_data_dir='temp' \
+    --caption_column="text" \
+    --image_column="image" \
+    --rank=4 \
+    --train_text_encoder \
+    --resolution=512 \
+    --seed=42 \
+    --random_flip \
+    --train_batch_size=4 \
+    --num_train_epochs=10 \
+    --checkpointing_steps=1000 \
+    --gradient_accumulation_steps=2 \
+    --learning_rate=1e-4 \
+    --lr_scheduler="cosine" \
+    --lr_warmup_steps=0 \
+    --allow_tf32 \
+    --mixed_precision='fp16' \
+    --output_dir='/Checkpoints' \
+    --validation_prompt="Fred is in the living room. Fred walks by Wilma and then takes a plate of food from his hands." \
+    --num_validation_images=4 \
+    --report_to="wandb"
 ```  
 
 ---
 
+### Run the fine-tuning script for other Models
+```bash
+CUDA_VISIBLE_DEVICES=1  accelerate launch /home/jankap/story_visulization/Finetuning/Scripts/text_2_image_finetuning_lora.py \
+    --pretrained_model_name_or_path='CompVis/stable-diffusion-v1-4'  \
+    --train_data_dir='temp' \
+    --caption_column="text" \
+    --data_json_file=ADD JSON TRAINING DATA PATH
+    --image_column="image" \
+    --rank=4 \
+    --resolution=512 \
+    --seed=42 \
+    --random_flip \
+    --train_batch_size=4 \
+    --num_train_epochs=10 \
+    --checkpointing_steps=1000 \
+    --gradient_accumulation_steps=2 \
+    --learning_rate=1e-4 \
+    --lr_scheduler="constant" \
+    --lr_warmup_steps=0 \
+    --allow_tf32 \
+    --mixed_precision='fp16' \
+    --output_dir='Checkpoints' \
+    --validation_prompt="Fred is in the living room. Fred walks by Wilma and then takes a plate of food from his hands." \
+    --num_validation_images=4 \
+    --report_to="wandb"
+```
+
+---
+
+### Inference script for Text to Image Generation
+```bash
+CUDA_VISIBLE_DEVICES=0 python Text_to_Image_Inference_sdxl_lora.py \
+    --lora_path /path/to/lora/checkpoint-24000 \
+    --test_json /path/to/flintstoneSV++_test.json \
+    --output_dir ./outputs
+```
+
+
+---
 ## 📝 Paper  
 
 **Title:** [FlintstonesSV++: Improving Story Narration using Visual Scene Graph](https://ceur-ws.org/Vol-3964/paper3.pdf))  
